@@ -357,7 +357,7 @@
             </div>
             <div class="price-line">
               <span data-i18n="bk_cleaning">Ménage</span>
-              <span id="price-cleaning">250 €</span>
+              <span id="price-cleaning">300 €</span>
             </div>
             <div class="price-line">
               <span data-i18n="bk_taxe">Taxe de séjour</span>
@@ -492,9 +492,9 @@
 
     // Weekly rates by month
     const WEEKLY_RATES = {
-      1: 6500, 2: 6500, 3: 6500, 4: 6500, 5: 6500,
-      6: 7150, 7: 7650, 8: 7650, 9: 7150,
-      10: 6500, 11: 6500, 12: 6500,
+      1: 6800, 2: 6800, 3: 6800, 4: 6800, 5: 6800,
+      6: 7500, 7: 8000, 8: 8000, 9: 7500,
+      10: 6800, 11: 6800, 12: 6800,
     };
 
     // Contact email for form submissions
@@ -621,7 +621,7 @@
       // Build booked & unavailable dates from static ranges
       bookedDates = new Set();
       unavailableDates = new Set();
-      weeklyRate = WEEKLY_RATES[currentMonth] || 6500;
+      weeklyRate = WEEKLY_RATES[currentMonth] || 6800;
       const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
       const monthStart = `${currentYear}-${String(currentMonth).padStart(2,'0')}-01`;
       const monthEnd = `${currentYear}-${String(currentMonth).padStart(2,'0')}-${String(daysInMonth).padStart(2,'0')}`;
@@ -739,7 +739,7 @@
         // Price calc
         const weeks = nights / 7;
         const accom = weeklyRate * weeks;
-        const cleaning = 250 * weeks;
+        const cleaning = 300 * weeks;
         const adults = parseInt(document.querySelector('[name="num_adults"]').value) || 6;
         const taxe = adults * nights * 1.86;
         const total = accom + cleaning + taxe;
@@ -804,7 +804,7 @@
         const nights = Math.round((coDate - ciDate) / 86400000);
         const weeks = nights / 7;
         const accom = weeklyRate * weeks;
-        const cleaning = 250 * weeks;
+        const cleaning = 300 * weeks;
         const taxe = parseInt(adults) * nights * 1.86;
         const total = accom + cleaning + taxe;
 
