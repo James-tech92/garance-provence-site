@@ -822,6 +822,8 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   font-size: 0.92rem;
 }
 
+.pricing-note + .pricing-note { margin-top: 8px; }
+
 .pricing-note strong { color: var(--charcoal); }
 
 /* --- LOCATION --- */
