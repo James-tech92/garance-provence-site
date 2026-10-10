@@ -25,8 +25,10 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     /* ---- Booking page overrides ---- */
+    .site-header .lang-btn { color: var(--charcoal); }
+    .site-header .lang-btn.active { color: #fff; }
     .booking-hero {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.25)),
+      background: linear-gradient(to bottom, rgba(0,0,0,0.50), rgba(0,0,0,0.40)),
                   url('images/piscine-1.jpg') center/cover no-repeat;
       height: 340px;
       display: flex;
@@ -37,7 +39,8 @@
       margin-top: var(--header-h);
     }
     .booking-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 8px; }
-    .booking-hero p { font-size: 1.1rem; font-weight: 300; opacity: 0.9; }
+    .booking-hero h1, .booking-hero p { text-shadow: 0 1px 3px rgba(0,0,0,0.45), 0 2px 14px rgba(0,0,0,0.35); }
+    .booking-hero p { font-size: 1.1rem; font-weight: 400; }
 
     .booking-section { padding: 80px 0; }
     .booking-grid {
@@ -54,7 +57,7 @@
       justify-content: space-between;
       margin-bottom: 20px;
     }
-    .cal-header h3 {
+    .cal-header h2 {
       font-family: var(--font-serif);
       font-size: 1.3rem;
       min-width: 200px;
@@ -64,8 +67,8 @@
       background: none;
       border: 1.5px solid var(--terracotta);
       color: var(--terracotta);
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       cursor: pointer;
       font-size: 1.1rem;
@@ -104,6 +107,8 @@
     .cal-day:hover:not(.booked):not(.unavailable):not(.empty):not(.past) {
       background: var(--cream);
     }
+    .cal-day.selected:hover { background: var(--terracotta-dk); color: #fff; }
+    .cal-day.in-range:hover { background: var(--terracotta-lt); color: var(--charcoal); }
     .cal-day.empty { cursor: default; }
     .cal-day.past { color: #ccc; cursor: default; }
     .cal-day.booked {
@@ -131,7 +136,7 @@
     }
     .cal-day.in-range {
       background: var(--terracotta-lt);
-      color: #fff;
+      color: var(--charcoal);
     }
     .cal-day.today {
       border: 2px solid var(--terracotta);
@@ -165,7 +170,7 @@
       padding: 24px;
       margin-top: 24px;
     }
-    .price-summary h4 {
+    .price-summary h3 {
       font-family: var(--font-serif);
       margin-bottom: 16px;
       font-size: 1.1rem;
@@ -188,7 +193,7 @@
 
     /* Booking form */
     .booking-form-section { margin-top: 0; }
-    .booking-form-section h3 {
+    .booking-form-section h2 {
       font-family: var(--font-serif);
       font-size: 1.3rem;
       margin-bottom: 24px;
@@ -272,7 +277,7 @@
       text-align: center;
       display: none;
     }
-    .booking-success h3 { color: #2e7d32; margin-bottom: 8px; }
+    .booking-success h2 { color: #2e7d32; margin-bottom: 8px; }
     .booking-success p { color: #4a4a4a; }
     .booking-success .booking-ref { font-size: 1.3rem; font-weight: 700; color: var(--terracotta); margin: 12px 0; }
 
@@ -305,8 +310,8 @@
         <li><a href="/#contact" style="color:var(--charcoal)" data-i18n="nav_contact">Contact</a></li>
         <li>
           <div class="lang-toggle" style="border-color:var(--charcoal)">
-            <button class="lang-btn active" data-lang="fr" style="color:var(--charcoal)">FR</button>
-            <button class="lang-btn" data-lang="en" style="color:var(--charcoal)">EN</button>
+            <button class="lang-btn active" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="en">EN</button>
           </div>
         </li>
       </ul>
@@ -336,7 +341,7 @@
           <div id="calendar-widget">
             <div class="cal-header">
               <button class="cal-nav" id="cal-prev">&#8249;</button>
-              <h3 id="cal-title"></h3>
+              <h2 id="cal-title"></h2>
               <button class="cal-nav" id="cal-next">&#8250;</button>
             </div>
             <div class="cal-grid" id="cal-grid"></div>
@@ -350,7 +355,7 @@
           </div>
 
           <div class="price-summary" id="price-summary" style="display:none">
-            <h4 data-i18n="bk_estimate">Estimation tarifaire</h4>
+            <h3 data-i18n="bk_estimate">Estimation tarifaire</h3>
             <div class="price-line">
               <span data-i18n="bk_accom">Hébergement</span>
               <span id="price-accom">—</span>
@@ -372,7 +377,7 @@
 
         <!-- RIGHT: Form -->
         <div class="booking-form-section">
-          <h3 data-i18n="bk_form_title">Demande de réservation</h3>
+          <h2 data-i18n="bk_form_title">Demande de réservation</h2>
 
           <div class="date-display" id="date-display">
             <span data-i18n="bk_select_dates">Sélectionnez vos dates d'arrivée et de départ sur le calendrier</span>
@@ -448,7 +453,7 @@
           </form>
 
           <div class="booking-success" id="booking-success">
-            <h3 data-i18n="bk_success_title">Demande envoyée !</h3>
+            <h2 data-i18n="bk_success_title">Demande envoyée !</h2>
             <p data-i18n="bk_success_p1">Votre demande a bien été enregistrée.</p>
             <div class="booking-ref" id="booking-ref"></div>
             <p data-i18n="bk_success_p2">Régis vous contactera sous 24h pour confirmer votre réservation.</p>
