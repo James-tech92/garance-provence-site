@@ -25,26 +25,35 @@
       about_title:   'Un lieu d\'exception',
       about_sub:     'Ancien Relais de Poste du XVIIe siècle restauré dans le respect des matériaux d\'origine',
       about_p1:      'Nichée entre Avignon et L\'Isle-sur-la-Sorgue, aux portes du Luberon, La Garance en Provence est une demeure de caractère qui allie le charme de l\'authentique à un confort contemporain. Cette ancienne halte de diligences a été restaurée avec passion, préservant pierres apparentes, poutres anciennes et sols en pierre.',
-      about_p2:      'La propriété offre une vue imprenable sur le Château de Thouzon et s\'étend dans un parc ombragé de platanes centenaires. Louée en exclusivité, elle accueille jusqu\'à 12 convives dans 6 chambres raffinées, chacune dotée de sa salle de bain privative.',
+      about_p2:      'La propriété offre une vue imprenable sur le Château de Thouzon et s\'étend dans un parc ombragé de platanes centenaires. Louée en exclusivité, elle accueille jusqu\'à 12 convives dans 6 chambres raffinées, chacune dotée de sa salle de douche privative.',
       about_f1:      '6 chambres',
       about_f2:      '12 convives',
       about_f3:      'Piscine 17m',
       about_f4:      'Parc arboré',
       about_owners:  'Régis et Chantal vous accueillent avec passion dans leur demeure familiale.',
       rooms_title:   'Les Chambres',
-      rooms_sub:     'Six chambres de caractère, toutes orientées plein sud, avec salle de bain privative et douche à l\'italienne',
-      room1_title:   '2 Chambres Jardin',
-      room1_desc:    'Deux chambres en rez-de-jardin avec accès direct au parc et à la piscine. Lit 160 cm, salle de bain privative avec douche à l\'italienne.',
-      room1_tag1:    'Rez-de-chaussée',
-      room1_tag2:    'Accès jardin',
-      room2_title:   '2 Chambres Bastide',
-      room2_desc:    'Deux chambres à l\'étage offrant une vue dégagée sur le parc et le Château de Thouzon. Lit 160 cm, salle de bain privative avec douche à l\'italienne.',
-      room2_tag1:    'Étage',
-      room2_tag2:    'Vue château',
-      room3_title:   '2 Chambres Provence',
-      room3_desc:    'Deux chambres à l\'étage baignées de lumière, décorées dans l\'esprit provençal. Lit 160 cm, salle de bain privative avec douche à l\'italienne.',
-      room3_tag1:    'Étage',
-      room3_tag2:    'Plein sud',
+      rooms_sub:     'Six chambres de caractère, toutes orientées plein sud, avec salle de douche privative à l\'italienne',
+      room1_title:   'Les Roses',
+      room1_tag1:    '1er étage',
+      room1_tag2:    'Vue sur la cour aux platanes',
+      room1_desc:    'Lit double (2 × 90 cm) ou 2 lits indépendants, salle de douche privative à l\'italienne.',
+      room2_title:   'Les Ocres',
+      room2_tag1:    '1er étage',
+      room2_desc:    'Lit 160 cm, salle de douche privative à l\'italienne.',
+      room3_title:   'Le Pigeonnier',
+      room3_tag1:    '1er étage',
+      room3_tag2:    'Vue sur le jardin et la cour',
+      room3_desc:    'Lit 160 cm, salle de douche privative à l\'italienne.',
+      room4_title:   'La Calade',
+      room4_tag1:    'Rez-de-chaussée',
+      room4_desc:    'Lit 160 cm, salle de douche privative à l\'italienne.',
+      room5_title:   'La Fenière',
+      room5_tag1:    '1er étage',
+      room5_desc:    'Lit 160 cm, salle de douche privative à l\'italienne.',
+      room6_title:   'Les Pierres',
+      room6_tag1:    'Rez-de-chaussée',
+      room6_tag2:    'Accès extérieur',
+      room6_desc:    'Lit 160 cm, salle de douche privative à l\'italienne.',
       amen_title:    'Équipements & Services',
       amen_sub:      'Tout le confort pour un séjour inoubliable en Provence',
       amen1_title:   'Piscine à débordement',
@@ -76,10 +85,12 @@
       price_s2:      'Moyenne saison',
       price_s2m:     'Juin — Septembre',
       price_s3:      'Reste de l\'année',
-      price_s3m:     'Octobre — Mai',
+      price_s3m:     'Octobre — Décembre',
       price_week:    '/ semaine',
       price_badge:   'Populaire',
-      price_note:    'Frais de ménage : <strong>250 €</strong> par semaine. Meublé de tourisme classé <strong>3 étoiles</strong>.',
+      price_note:    'Frais de ménage : <strong>300 €</strong> par semaine. Meublé de tourisme classé <strong>3 étoiles</strong>.',
+      price_tax:     'Taxe de séjour non incluse, à régler avec le solde.',
+      price_closed:  'Propriété non disponible de janvier à mai inclus, et du 25 septembre au 31 décembre 2027.',
       nav_booking:   'Réserver',
       price_cta:     'Vérifier les disponibilités',
       loc_title:     'Situation',
@@ -133,26 +144,35 @@
       about_title:   'A place like no other',
       about_sub:     'A 17th-century former coaching inn, restored with original materials',
       about_p1:      'Nestled between Avignon and L\'Isle-sur-la-Sorgue, at the gateway to the Luberon, La Garance en Provence is a character-filled estate combining authentic charm with contemporary comfort. This former stagecoach stop has been lovingly restored, preserving exposed stone walls, antique beams, and stone floors.',
-      about_p2:      'The property offers stunning views of Château de Thouzon and is set within grounds shaded by century-old plane trees. Available for exclusive rental, it welcomes up to 12 guests in 6 refined bedrooms, each with its own private bathroom.',
+      about_p2:      'The property offers stunning views of Château de Thouzon and is set within grounds shaded by century-old plane trees. Available for exclusive rental, it welcomes up to 12 guests in 6 refined bedrooms, each with its own private shower room.',
       about_f1:      '6 bedrooms',
       about_f2:      '12 guests',
       about_f3:      '17m pool',
       about_f4:      'Parkland',
       about_owners:  'Régis and Chantal warmly welcome you to their family home.',
       rooms_title:   'The Rooms',
-      rooms_sub:     'Six character-filled bedrooms, all south-facing, with private bathroom and Italian shower',
-      room1_title:   '2 Garden Rooms',
-      room1_desc:    'Two ground-floor rooms with direct access to the garden and pool. 160 cm bed, private bathroom with Italian shower.',
-      room1_tag1:    'Ground floor',
-      room1_tag2:    'Garden access',
-      room2_title:   '2 Bastide Rooms',
-      room2_desc:    'Two upstairs rooms offering open views over the grounds and Château de Thouzon. 160 cm bed, private bathroom with Italian shower.',
-      room2_tag1:    'Upper floor',
-      room2_tag2:    'Castle view',
-      room3_title:   '2 Provence Rooms',
-      room3_desc:    'Two light-filled upstairs rooms decorated in Provençal style. 160 cm bed, private bathroom with Italian shower.',
-      room3_tag1:    'Upper floor',
-      room3_tag2:    'South-facing',
+      rooms_sub:     'Six character-filled bedrooms, all south-facing, with private Italian-style shower rooms',
+      room1_title:   'Les Roses',
+      room1_tag1:    'First floor',
+      room1_tag2:    'View over the plane-tree courtyard',
+      room1_desc:    'Double bed (2 × 90 cm) or 2 separate beds, private Italian-style shower room.',
+      room2_title:   'Les Ocres',
+      room2_tag1:    'First floor',
+      room2_desc:    '160 cm bed, private Italian-style shower room.',
+      room3_title:   'Le Pigeonnier',
+      room3_tag1:    'First floor',
+      room3_tag2:    'View over the garden and courtyard',
+      room3_desc:    '160 cm bed, private Italian-style shower room.',
+      room4_title:   'La Calade',
+      room4_tag1:    'Ground floor',
+      room4_desc:    '160 cm bed, private Italian-style shower room.',
+      room5_title:   'La Fenière',
+      room5_tag1:    'First floor',
+      room5_desc:    '160 cm bed, private Italian-style shower room.',
+      room6_title:   'Les Pierres',
+      room6_tag1:    'Ground floor',
+      room6_tag2:    'Outside access',
+      room6_desc:    '160 cm bed, private Italian-style shower room.',
       amen_title:    'Amenities & Services',
       amen_sub:      'Everything you need for an unforgettable stay in Provence',
       amen1_title:   'Infinity pool',
@@ -184,10 +204,12 @@
       price_s2:      'Mid season',
       price_s2m:     'June — September',
       price_s3:      'Rest of the year',
-      price_s3m:     'October — May',
+      price_s3m:     'October — December',
       price_week:    '/ week',
       price_badge:   'Popular',
-      price_note:    'Cleaning fee: <strong>€250</strong> per week. Classified <strong>3-star</strong> vacation rental (meublé de tourisme).',
+      price_note:    'Cleaning fee: <strong>€300</strong> per week. Classified <strong>3-star</strong> vacation rental (meublé de tourisme).',
+      price_tax:     'Tourist tax not included, payable with the balance.',
+      price_closed:  'Property not available from January to May inclusive, and from 25 September to 31 December 2027.',
       nav_booking:   'Book',
       price_cta:     'Check availability',
       loc_title:     'Location',
@@ -241,6 +263,7 @@
     setupMobileMenu();
     setupSmoothScroll();
     setupRevealAnimations();
+    setupRoomCarousels();
     setupLightbox();
     setupContactForm();
     // Hero slow zoom
@@ -367,6 +390,45 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  // ----------------------------------------------------------
+  // Room photo carousels (horizontal scroll)
+  // ----------------------------------------------------------
+  function setupRoomCarousels() {
+    document.querySelectorAll('.room-carousel').forEach(box => {
+      const track = box.querySelector('.room-carousel-track');
+      const slides = track.querySelectorAll('img');
+      const total = slides.length;
+      if (total < 2) return;
+
+      const mk = (cls, label, txt) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'room-carousel-btn ' + cls;
+        b.setAttribute('aria-label', label);
+        b.textContent = txt;
+        return b;
+      };
+      const prev = mk('prev', 'Photo précédente / Previous photo', '\u2039');
+      const next = mk('next', 'Photo suivante / Next photo', '\u203A');
+      const count = document.createElement('span');
+      count.className = 'room-carousel-count';
+      box.append(prev, next, count);
+
+      const index = () => Math.round(track.scrollLeft / track.clientWidth);
+      const update = () => {
+        const i = index();
+        count.textContent = (i + 1) + ' / ' + total;
+        prev.disabled = i <= 0;
+        next.disabled = i >= total - 1;
+      };
+      const go = i => track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+      prev.addEventListener('click', () => go(index() - 1));
+      next.addEventListener('click', () => go(index() + 1));
+      track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+      update();
+    });
   }
 
   // ----------------------------------------------------------

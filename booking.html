@@ -10,10 +10,10 @@
   <meta property="og:description" content="Vérifiez les disponibilités et réservez votre séjour en Provence. 6 chambres, piscine à débordement, entre Avignon et le Luberon.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.garance-provence.com/booking.html">
-  <meta property="og:image" content="https://www.garance-provence.com/images/garance_01.jpg">
+  <meta property="og:image" content="https://www.garance-provence.com/images/vue-exterieure-maison.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Réserver — La Garance en Provence">
-  <meta name="twitter:image" content="https://www.garance-provence.com/images/garance_01.jpg">
+  <meta name="twitter:image" content="https://www.garance-provence.com/images/vue-exterieure-maison.jpg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
     /* ---- Booking page overrides ---- */
     .booking-hero {
       background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.25)),
-                  url('images/garance_03.jpg') center/cover no-repeat;
+                  url('images/piscine-1.jpg') center/cover no-repeat;
       height: 340px;
       display: flex;
       align-items: center;
@@ -357,7 +357,7 @@
             </div>
             <div class="price-line">
               <span data-i18n="bk_cleaning">Ménage</span>
-              <span id="price-cleaning">250 €</span>
+              <span id="price-cleaning">300 €</span>
             </div>
             <div class="price-line">
               <span data-i18n="bk_taxe">Taxe de séjour</span>
@@ -488,13 +488,14 @@
     const UNAVAILABLE_RANGES = [
       { from: '2026-01-01', to: '2026-06-27' },  // Hors saison
       { from: '2026-09-05', to: '2026-12-31' },  // Hors saison
+      { from: '2027-09-25', to: '2027-12-31' },  // Non disponible
     ];
 
     // Weekly rates by month
     const WEEKLY_RATES = {
-      1: 6500, 2: 6500, 3: 6500, 4: 6500, 5: 6500,
-      6: 7150, 7: 7650, 8: 7650, 9: 7150,
-      10: 6500, 11: 6500, 12: 6500,
+      1: 6800, 2: 6800, 3: 6800, 4: 6800, 5: 6800,
+      6: 7500, 7: 8000, 8: 8000, 9: 7500,
+      10: 6800, 11: 6800, 12: 6800,
     };
 
     // Contact email for form submissions
@@ -621,7 +622,7 @@
       // Build booked & unavailable dates from static ranges
       bookedDates = new Set();
       unavailableDates = new Set();
-      weeklyRate = WEEKLY_RATES[currentMonth] || 6500;
+      weeklyRate = WEEKLY_RATES[currentMonth] || 6800;
       const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
       const monthStart = `${currentYear}-${String(currentMonth).padStart(2,'0')}-01`;
       const monthEnd = `${currentYear}-${String(currentMonth).padStart(2,'0')}-${String(daysInMonth).padStart(2,'0')}`;
@@ -638,6 +639,12 @@
       }
       fillDates(BOOKED_RANGES, bookedDates);
       fillDates(UNAVAILABLE_RANGES, unavailableDates);
+      // Property is not rented from January to May (inclusive), every year
+      if (currentMonth <= 5) {
+        for (let d = 1; d <= daysInMonth; d++) {
+          unavailableDates.add(`${currentYear}-${String(currentMonth).padStart(2,'0')}-${String(d).padStart(2,'0')}`);
+        }
+      }
       // Remove checkout days from booked — they are available for check-in
       CHECKOUT_DATES.forEach(d => bookedDates.delete(d));
 
@@ -739,7 +746,7 @@
         // Price calc
         const weeks = nights / 7;
         const accom = weeklyRate * weeks;
-        const cleaning = 250 * weeks;
+        const cleaning = 300 * weeks;
         const adults = parseInt(document.querySelector('[name="num_adults"]').value) || 6;
         const taxe = adults * nights * 1.86;
         const total = accom + cleaning + taxe;
@@ -804,7 +811,7 @@
         const nights = Math.round((coDate - ciDate) / 86400000);
         const weeks = nights / 7;
         const accom = weeklyRate * weeks;
-        const cleaning = 250 * weeks;
+        const cleaning = 300 * weeks;
         const taxe = parseInt(adults) * nights * 1.86;
         const total = accom + cleaning + taxe;
 
