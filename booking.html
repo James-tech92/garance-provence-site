@@ -638,6 +638,12 @@
       }
       fillDates(BOOKED_RANGES, bookedDates);
       fillDates(UNAVAILABLE_RANGES, unavailableDates);
+      // Property is not rented from January to May (inclusive), every year
+      if (currentMonth <= 5) {
+        for (let d = 1; d <= daysInMonth; d++) {
+          unavailableDates.add(`${currentYear}-${String(currentMonth).padStart(2,'0')}-${String(d).padStart(2,'0')}`);
+        }
+      }
       // Remove checkout days from booked — they are available for check-in
       CHECKOUT_DATES.forEach(d => bookedDates.delete(d));
 
