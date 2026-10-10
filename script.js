@@ -259,6 +259,7 @@
     setupMobileMenu();
     setupSmoothScroll();
     setupRevealAnimations();
+    setupRoomCarousels();
     setupLightbox();
     setupContactForm();
     // Hero slow zoom
@@ -385,6 +386,45 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  // ----------------------------------------------------------
+  // Room photo carousels (horizontal scroll)
+  // ----------------------------------------------------------
+  function setupRoomCarousels() {
+    document.querySelectorAll('.room-carousel').forEach(box => {
+      const track = box.querySelector('.room-carousel-track');
+      const slides = track.querySelectorAll('img');
+      const total = slides.length;
+      if (total < 2) return;
+
+      const mk = (cls, label, txt) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'room-carousel-btn ' + cls;
+        b.setAttribute('aria-label', label);
+        b.textContent = txt;
+        return b;
+      };
+      const prev = mk('prev', 'Photo précédente / Previous photo', '\u2039');
+      const next = mk('next', 'Photo suivante / Next photo', '\u203A');
+      const count = document.createElement('span');
+      count.className = 'room-carousel-count';
+      box.append(prev, next, count);
+
+      const index = () => Math.round(track.scrollLeft / track.clientWidth);
+      const update = () => {
+        const i = index();
+        count.textContent = (i + 1) + ' / ' + total;
+        prev.disabled = i <= 0;
+        next.disabled = i >= total - 1;
+      };
+      const go = i => track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+      prev.addEventListener('click', () => go(index() - 1));
+      next.addEventListener('click', () => go(index() + 1));
+      track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+      update();
+    });
   }
 
   // ----------------------------------------------------------
