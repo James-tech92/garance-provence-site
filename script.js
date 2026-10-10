@@ -91,6 +91,23 @@
       price_note:    'Frais de ménage : <strong>300 €</strong> par semaine. Meublé de tourisme classé <strong>3 étoiles</strong>.',
       price_tax:     'Taxe de séjour non incluse, à régler avec le solde.',
       price_closed:  'Propriété non disponible de janvier à mai inclus, et du 25 septembre au 31 décembre 2027.',
+      faq_title:     'Questions fréquentes',
+      faq_q1:       'Combien de personnes La Garance peut-elle accueillir ?',
+      faq_a1:       'La Garance accueille jusqu\'à 12 personnes dans 6 chambres, chacune avec salle de douche privative à l\'italienne. La propriété est louée en exclusivité.',
+      faq_q2:       'Où se trouve La Garance en Provence ?',
+      faq_a2:       'Au Thor (84250), dans le Vaucluse, entre Avignon et L\'Isle-sur-la-Sorgue, aux portes du Luberon. La propriété est un ancien Relais de Poste du XVIIe siècle restauré, classé meublé de tourisme 3 étoiles.',
+      faq_q3:       'Comment sont réparties les six chambres ?',
+      faq_a3:       'Les Roses : 1er étage, lit double (2 × 90 cm) ou 2 lits indépendants, vue sur la cour aux platanes. Les Ocres : 1er étage, lit 160 cm. Le Pigeonnier : 1er étage, lit 160 cm, vue sur le jardin et la cour. La Fenière : 1er étage, lit 160 cm. La Calade : rez-de-jardin, lit 160 cm. Les Pierres : rez-de-jardin avec accès indépendant, lit 160 cm.',
+      faq_q4:       'Quels sont les tarifs ?',
+      faq_a4:       'Location à la semaine de l\'ensemble de la propriété : 8 000 € en haute saison (juillet – août), 7 500 € en moyenne saison (juin et septembre), 6 800 € le reste de l\'année (octobre à décembre). Frais de ménage : 300 € par semaine. Taxe de séjour non incluse, à régler avec le solde.',
+      faq_q5:       'Quand la propriété est-elle disponible ?',
+      faq_a5:       'La propriété n\'est pas louée de janvier à mai inclus, ni du 25 septembre au 31 décembre 2027. Le calendrier de la page de réservation indique les dates disponibles.',
+      faq_q6:       'Quels sont les horaires d\'arrivée et de départ ?',
+      faq_a6:       'Arrivée à partir de 16 h, départ avant 10 h.',
+      faq_q7:       'Quels équipements sont proposés ?',
+      faq_a7:       'Piscine à débordement de 17 mètres, WiFi gratuit, parking privé avec borne de recharge pour véhicule électrique, terrasse couverte, terrain de pétanque, ping-pong, plancha, local à vélos, lit bébé et baignoire sur demande, soins et massages sur rendez-vous.',
+      faq_q8:       'Comment réserver ?',
+      faq_a8:       'Choisissez vos dates sur le calendrier de la page de réservation puis envoyez votre demande. Régis vous contacte sous 24 h pour confirmer la disponibilité et les modalités de paiement. Une demande ne constitue pas une réservation ferme.',
       nav_booking:   'Réserver',
       price_cta:     'Vérifier les disponibilités',
       loc_title:     'Situation',
@@ -210,6 +227,23 @@
       price_note:    'Cleaning fee: <strong>€300</strong> per week. Classified <strong>3-star</strong> vacation rental (meublé de tourisme).',
       price_tax:     'Tourist tax not included, payable with the balance.',
       price_closed:  'Property not available from January to May inclusive, and from 25 September to 31 December 2027.',
+      faq_title:     'Frequently asked questions',
+      faq_q1:       'How many guests can La Garance accommodate?',
+      faq_a1:       'La Garance sleeps up to 12 guests in 6 bedrooms, each with a private Italian-style shower room. The property is rented exclusively to a single group.',
+      faq_q2:       'Where is La Garance en Provence?',
+      faq_a2:       'In Le Thor (84250), Vaucluse, between Avignon and L\'Isle-sur-la-Sorgue, at the gateway to the Luberon. It is a restored 17th-century former coaching inn, classified as a 3-star tourist furnished rental.',
+      faq_q3:       'How are the six bedrooms arranged?',
+      faq_a3:       'Les Roses: first floor, double bed (2 × 90 cm) or 2 separate beds, view over the plane-tree courtyard. Les Ocres: first floor, 160 cm bed. Le Pigeonnier: first floor, 160 cm bed, view over the garden and courtyard. La Fenière: first floor, 160 cm bed. La Calade: garden level, 160 cm bed. Les Pierres: garden level with independent access, 160 cm bed.',
+      faq_q4:       'What are the rates?',
+      faq_a4:       'Weekly rental of the entire property: €8,000 in high season (July – August), €7,500 in mid season (June and September), €6,800 the rest of the year (October to December). Cleaning fee: €300 per week. Tourist tax not included, payable with the balance.',
+      faq_q5:       'When is the property available?',
+      faq_a5:       'The property is not rented from January to May inclusive, nor from 25 September to 31 December 2027. The calendar on the booking page shows the available dates.',
+      faq_q6:       'What are the check-in and check-out times?',
+      faq_a6:       'Check-in from 4 pm, check-out before 10 am.',
+      faq_q7:       'What amenities are offered?',
+      faq_a7:       '17-metre infinity pool, free WiFi, private parking with electric vehicle charging point, covered terrace, pétanque court, table tennis, plancha, bike storage, baby cot and bathtub on request, wellness treatments and massages by appointment.',
+      faq_q8:       'How do I book?',
+      faq_a8:       'Choose your dates on the booking page calendar and send your request. Régis will contact you within 24 hours to confirm availability and payment details. A request is not a confirmed booking.',
       nav_booking:   'Book',
       price_cta:     'Check availability',
       loc_title:     'Location',
@@ -274,14 +308,38 @@
   // Language system
   // ----------------------------------------------------------
   function setupLanguage() {
-    // Check URL hash or localStorage
+    // Localized pages (FR at / and EN at /en/) are linked with hreflang alternates:
+    // the language is the page's own, and the switch navigates between them.
+    const served = document.documentElement.lang === 'en' ? 'en' : 'fr';
+    const alternates = {};
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l => {
+      // pathname only: works on the custom domain, on previews and locally
+      alternates[l.getAttribute('hreflang')] = new URL(l.href).pathname;
+    });
+    const localized = Boolean(alternates.fr && alternates.en);
     const saved = localStorage.getItem('garance-lang');
-    if (saved === 'en' || saved === 'fr') currentLang = saved;
+
+    if (localized) {
+      currentLang = served;
+      if (served === 'fr' && saved === 'en') {
+        // Returning visitor who chose English earlier
+        window.location.replace(alternates.en);
+        return;
+      }
+      localStorage.setItem('garance-lang', served);
+    } else if (saved === 'en' || saved === 'fr') {
+      currentLang = saved;
+    }
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        currentLang = btn.dataset.lang;
-        localStorage.setItem('garance-lang', currentLang);
+        const lang = btn.dataset.lang;
+        localStorage.setItem('garance-lang', lang);
+        if (localized && lang !== served) {
+          window.location.href = alternates[lang];
+          return;
+        }
+        currentLang = lang;
         applyTranslations();
         updateLangButtons();
       });
