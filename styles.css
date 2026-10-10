@@ -242,7 +242,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   inset: 0;
   background:
     linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.10) 40%, rgba(0,0,0,0.40) 100%),
-    url('images/garance_03.jpg') center/cover no-repeat;
+    url('images/piscine-1.jpg') center/cover no-repeat;
   transform: scale(1.05);
   transition: transform 12s ease-out;
 }
@@ -468,6 +468,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .room-card:hover .room-card-img img { transform: scale(1.06); }
 
+
 .room-card-body {
   padding: 24px;
 }
@@ -482,6 +483,10 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   font-size: 0.92rem;
   margin-bottom: 16px;
 }
+
+.room-tags { margin-bottom: 12px; }
+
+.room-card-body p:last-child { margin-bottom: 0; }
 
 .room-tag {
   display: inline-block;
